@@ -1,16 +1,35 @@
-# React + Vite
+CareerGraph Client (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React app for CareerGraph — view a candidate's profile, see ranked job
+recommendations, and explore why a candidate matches a job through an
+interactive graph view.
 
-Currently, two official plugins are available:
+Scripts
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start the dev server with hot reload |
+| `npm run build` | Production build (output to `dist/`) |
+| `npm run preview` | Preview the production build locally |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Pages
+| Route | Page | Description |
+|---|---|---|
+| `/` | Dashboard | Selected candidate's skills, projects, and stats |
+| `/recommendations` | Recommendations | Ranked job matches for the candidate |
+| `/jobs/:jobId` | Job Details | Full match breakdown for one job |
+| `/jobs/:jobId/graph` | Graph Explorer | Visual graph of why the candidate matches |
 
-## React Compiler
+Project Structure
+```
+src/
+├── main.jsx        # Entry point
+├── App.jsx          # Layout, nav, candidate switcher
+├── api/             # Calls to the backend API
+├── pages/           # Dashboard, Recommendations, JobDetails, GraphExplorer
+├── components/       # JobCard, MatchScore, SkillBadge, GraphView
+└── styles/           # CSS
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Notes
+- The UI design (layout, color palette, and component styling) was created
+  with the help of AI.
